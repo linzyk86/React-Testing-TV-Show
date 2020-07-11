@@ -34,7 +34,7 @@ export default function App() {
     .then(res => {
       // set state with the data
       setShow(res.data);
-     setSeasons(formatSeasons(res.data._embedded.episodes))
+     setSeasons(formatSeasons(res.data._embedded.episodes));
     })
     .catch(err =>{
       console.log(err);
@@ -46,7 +46,7 @@ export default function App() {
   };
 
   if (!show) {
-    return <h2>Fetching data...</h2>;
+    return <h2>Fetching data</h2>;
   }
 
   return (
@@ -54,7 +54,7 @@ export default function App() {
       <img className="poster-img" src={show.image.original} alt={show.name} />
       <h1>{show.name}</h1>
       {parse(show.summary)}
-      <Dropdown testId = 'dropdown'
+      <Dropdown data-testid = "episode-test-id"
         options={Object.keys(seasons)}
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}

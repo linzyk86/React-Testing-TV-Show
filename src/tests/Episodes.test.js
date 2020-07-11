@@ -17,8 +17,6 @@ test("re-renders correctly with the list of episodes", () => {
       rerender(<Episodes episodes={data} />);
           const episodes = getAllByTestId(/episode/i);
 
-
-
     // Assert (make sure the episodes are rendered to the page)
 
      expect(episodes).toHaveLength(3);
